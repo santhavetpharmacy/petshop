@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ location }} - Products{% endblock %}
+
+{% block content %}
+  <h1 class="mb-4">Products in {{ location }}</h1>
+  <p class="lead">Select a product to see more details (currently a placeholder link):</p>
+  <div class="product-buttons">
+    <div>
+      {% for product in products %}
+        <!-- Use Django’s URL tag to pass the current location and the current product -->
+        <a href="{% url 'results' location=location product=product %}" class="btn btn-primary">{{ product }}</a>
+      {% endfor %}
+  </div>
+ 
+  <div class="mt-4">
+    <a href="{% url 'home' %}" class="btn btn-secondary">Back Home</a>
+  </div>
+    
+ 
+
+{% endblock %}

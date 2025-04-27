@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% block title %}Home - Pet Shop Accessories{% endblock %}
+{% block content %}
+<h1 class="mb-4">Welcome to Our Pet Shop Accessories!</h1>
+<p class="lead">Please choose a location:</p>
+<div class="btn-group-custom">
+  <a href="{% url 'thiruvarur' %}" class="btn">Thiruvarur</a>
+  <a href="{% url 'thirupur' %}" class="btn">Thirupur</a>
+  <a href="{% url 'trichy' %}" class="btn">Trichy</a>
+  <a href="{% url 'cuddolore' %}" class="btn">Cuddolore</a>
+</div>
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Pet Shop Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Optional: Bootstrap CSS for styling -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    /* Simple custom styles */
+    .btn-group-custom a {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Welcome to Our Pet Shop Accessories!</h1>
+    <p class="lead">Please choose a location:</p>
+    <div class="btn-group-custom">
+      <a href="{% url 'thiruvarur' %}" class="btn btn-primary btn-lg">Thiruvarur</a>
+      <a href="{% url 'thirupur' %}" class="btn btn-primary btn-lg">Thirupur</a>
+      <a href="{% url 'trichy' %}" class="btn btn-primary btn-lg">Trichy</a>
+      <a href="{% url 'cuddolore' %}" class="btn btn-primary btn-lg">Cuddolore</a>
+    </div>
+  </div>
+  <!-- Optional: Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

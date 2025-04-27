@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Pet Shop Accessories{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link to the advanced CSS file -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="{% url 'home' %}" class="logo">Pet Shop</a>
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'thiruvarur' %}">Thiruvarur</a></li>
+          <li><a href="{% url 'thirupur' %}">Thirupur</a></li>
+          <li><a href="{% url 'trichy' %}">Trichy</a></li>
+          <li><a href="{% url 'cuddolore' %}">Cuddolore</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container fade-in">
+    {% block content %}
+    <!-- Content from child templates appears here -->
+    {% endblock %}
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Pet Shop Accessories. All Rights Reserved.</p>
+    </div>
+  </footer>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

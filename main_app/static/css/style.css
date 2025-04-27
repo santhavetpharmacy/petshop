@@ -1,0 +1,229 @@
+/* main_app/static/css/style.css */
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: #a11d66;
+  --accent-color: #1f2bd1;
+  --secondary-color: #ffffff;
+  --dark-color: #333;
+  --font-family: 'Helvetica, Arial, sans-serif';
+}
+
+/* Reset & global rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, #0af0b6, #230242);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* Container for consistent width */
+.container {
+  margin-left: 0;
+  margin-right: auto;
+  max-width: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Navbar styling with gradient background, flex layout & hover effects */
+.navbar {
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  padding: 15px 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #524a03;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Main section layout */
+main {
+  padding: 40px 0;
+  min-height: 70vh;
+}
+
+/* Footer design with dark background and contrasting text */
+.footer {
+  background: var(--dark-color);
+  color: #f3ebf1;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Base button style */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1em;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced Product Buttons */
+.product-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 2rem 0;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.product-buttons a.btn {
+  flex: 1 1 calc(33.333% - 15px);
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  padding: 15px 20px;
+  display: flex; /* Added */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Improved responsive behavior */
+@media (max-width: 992px) {
+  .product-buttons a.btn {
+      flex-basis: calc(50% - 15px);
+      max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-buttons a.btn {
+      flex-basis: 100%;
+      max-width: 100%;
+      font-size: 1rem; /* Larger text on mobile */
+  }
+}
+
+/* Button variations */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Hover effects */
+.product-buttons a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-buttons a.btn {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 10px 15px;
+      font-size: 0.85rem;
+  }
+}
+
+/* Card styling */
+.card {
+  background: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Table Styles */
+.custom-table th,
+.custom-table td {
+  border: 2px solid #b0b0b0;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #0af0b6;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 2px solid #e0e0e0;
+}
