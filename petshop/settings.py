@@ -22,14 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@mx)urkd^i*7gpj%_cxekhs4qx198x+6)wyyieu5m5*zep26sv'
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'replace-this-with-a-real-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['petshop.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -46,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # WhiteNoise stays here
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,15 +122,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # For Django 3.x or later; adjust based on your BASE_DIR variable.
-
-# Enable Whitenoise for serving static files in production:
-MIDDLEWARE = [
-    # ... other middleware classes
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    # ... other middleware classes
-]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
